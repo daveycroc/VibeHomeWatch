@@ -1,15 +1,5 @@
-VibeHomeWatch/ (Your Repo Root)
-├── build.gradle.kts           <-- Project-wide settings
-├── settings.gradle.kts        <-- Module names
-├── app/
-│   ├── build.gradle.kts       <-- App-specific dependencies
-│   └── src/
-│       └── main/
-│           ├── AndroidManifest.xml  <-- The "Brain" (Permissions/Tiles)
-│           ├── proto/
-│           │   └── devices.proto    <-- The DataStore Schema
-│           └── java/com/vibe/homeapp/
-│               ├── MainActivity.kt  <-- The Picker UI
-│               ├── TileService.kt   <-- The Tile Logic
-│               ├── Receiver.kt      <-- The Click Handler
-│               └── Network.kt       <-- The Ktor Service
+plugins {
+    id("com.android.application") version "8.3.0" apply false
+    id("org.jetbrains.kotlin.android") version "2.3.20" apply false
+    id("com.google.protobuf") version "0.9.4" apply false
+}
