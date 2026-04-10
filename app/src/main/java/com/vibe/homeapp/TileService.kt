@@ -11,7 +11,20 @@ class HomeControlTileService : Material3TileService() {
     override suspend fun MaterialScope.tileResponse(
         requestParams: RequestBuilders.TileRequest
     ): TileBuilders.Tile {
-        
+
+    override suspend fun MaterialScope.resourcesResponse(
+        requestParams: RequestBuilders.ResourcesRequest
+    ): ResourceBuilders.Resources {
+        return resources(
+            version = "1",
+            images = mapOf(
+                "ic_light" to drawableRes(R.drawable.ic_light),
+                "ic_fan" to drawableRes(R.drawable.ic_fan),
+                "ic_home" to drawableRes(R.drawable.ic_home)
+            )
+        )
+    }
+
         // 1. Fetch the pinned devices from our DataStore
         val pinned = DeviceRepo.getPinnedDevices(this@HomeControlTileService).first()
 
