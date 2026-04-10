@@ -1,1 +1,14 @@
+syntax = "proto3";
 
+option java_package = "com.vibe.homeapp";
+option java_multiple_files = true;
+
+message Device {
+  string id = 1;
+  string name = 2;
+  string type = 3; // e.g., "LIGHT", "FAN"
+}
+
+message UserPreferences {
+  repeated Device favorite_devices = 1;
+}
